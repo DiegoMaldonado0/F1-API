@@ -4,7 +4,7 @@ const axios = require('axios');
 exports.getRaceResults = async (req, res) => {
   const { round } = req.params; // Tomamos el parámetro de la ruta
   try {
-    const response = await axios.get(`https://ergast.com/api/f1/current/${round}/results.json`);
+    const response = await axios.get(`https://api.jolpi.ca/ergast/f1/current/${round}/results/?format=json`);
     const raceResults = response.data.MRData.RaceTable.Races[0].Results;
     res.json(raceResults);
   } catch (error) {
