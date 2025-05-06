@@ -3,7 +3,7 @@ const axios = require('axios');
 // Función para obtener el calendario de carreras
 exports.getRaces = async (req, res) => {
   try {
-    const response = await axios.get('https://api.jolpi.ca/ergast/f1/2025/races/?format=json');
+    const response = await axios.get('https://api.jolpi.ca/ergast/f1/current/races/?format=json');
     const races = response.data.MRData.RaceTable.Races;
     res.json(races);
   } catch (error) {
