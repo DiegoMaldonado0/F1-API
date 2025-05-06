@@ -16,7 +16,7 @@ exports.getCircuitDetails = async (req, res) => {
 const { circuitId } = req.params; // Obtener el ID del circuito desde los parámetros de la URL
     try {
         // Consultar la API de Ergast para obtener detalles de un circuito específico
-        const response = await axios.get(`https://ergast.com/api/f1/circuits/${circuitId}.json`);
+        const response = await axios.get(`https://api.jolpi.ca/ergast/f1/circuits/${circuitId}/?format=json`);
         const circuitDetails = response.data.MRData.CircuitTable.Circuits[0]; // Extraer los detalles del circuito
         res.json(circuitDetails);
     } catch (error) {

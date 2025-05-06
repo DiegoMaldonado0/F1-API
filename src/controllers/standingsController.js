@@ -3,7 +3,7 @@ const axios = require('axios');
 // Función para obtener la clasificación de pilotos
 exports.getDriverStandings = async (req, res) => {
   try {
-    const response = await axios.get('https://ergast.com/api/f1/current/driverStandings.json');
+    const response = await axios.get('https://api.jolpi.ca/ergast/f1/2025/driverstandings/?format=json');
     const standings = response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     res.json(standings);
   } catch (error) {
@@ -14,7 +14,7 @@ exports.getDriverStandings = async (req, res) => {
 // Función para obtener la clasificación de constructores
 exports.getConstructorStandings = async (req, res) => {
   try {
-    const response = await axios.get('https://ergast.com/api/f1/current/constructorStandings.json');
+    const response = await axios.get('https://api.jolpi.ca/ergast/f1/2025/constructorstandings/?format=json');
     const standings = response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
     res.json(standings);
   } catch (error) {

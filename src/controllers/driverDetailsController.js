@@ -2,7 +2,7 @@ const axios = require('axios');
 
 // Mapa de nacionalidades a códigos de país para las banderas
 const nationalityToCountryCode = {
-    "Argentinian": "ar",
+    "Argentinian ": "ar",
     "Brazilian": "br",
     "British": "gb",
     "Chinese" : "cn",
@@ -16,6 +16,7 @@ const nationalityToCountryCode = {
     "Canadian": "ca",
     "American": "us",
     "Mexican": "mx",
+    "Monegasque": "mc",
     "Belgian": "be",
     "Swedish": "se",
     "Finnish": "fi",
@@ -57,7 +58,7 @@ async function getDriverImage(driverName) {
 exports.getDriverDetails = async (req, res) => {
   const { driverId } = req.params; // Tomamos el parámetro de la ruta
   try {
-    const response = await axios.get(`https://ergast.com/api/f1/drivers/${driverId}.json`);
+    const response = await axios.get(`https://api.jolpi.ca/ergast/f1/current/drivers/${driverId}/?format=json`);
     const driverDetails = response.data.MRData.DriverTable.Drivers[0];
     
     // Validamos si existen los datos que necesitamos
