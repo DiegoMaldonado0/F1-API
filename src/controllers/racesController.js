@@ -11,7 +11,7 @@ exports.getRaces = async (req, res) => {
   }
 };
 
-// Función para obtener detalles de un circuito específico
+// Función para obtener detalles de un circuito específicoo
 exports.getCircuitDetails = async (req, res) => {
 const { circuitId } = req.params; // Obtener el ID del circuito desde los parámetros de la URL
     try {
