@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const nationalityToCountryCode = {
-    "Argentinian ": "ar",
+    "Argentine": "ar",
     "Brazilian": "br",
     "British": "gb",
     "Chinese" : "cn",

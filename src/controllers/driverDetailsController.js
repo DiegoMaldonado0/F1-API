@@ -2,7 +2,7 @@ const axios = require('axios');
 
 // Mapa de nacionalidades a códigos de país para las banderas
 const nationalityToCountryCode = {
-    "Argentinian ": "ar",
+    "Argentine": "ar",
     "Brazilian": "br",
     "British": "gb",
     "Chinese" : "cn",
